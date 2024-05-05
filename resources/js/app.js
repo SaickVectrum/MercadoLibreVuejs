@@ -9,6 +9,7 @@ import BackendError from './components/Components/BackendError.vue'
 import ProductIndex from './components/Products/ProductIndex.vue'
 import ProductCategory from './components/Products/ProductCategory.vue'
 import ProductOnly from './components/Products/ProductOnly.vue'
+import CartShop from './components/Cart/CartShop.vue'
 
 const app = createApp({
 	components: {
@@ -16,7 +17,8 @@ const app = createApp({
 		TheCategoryList,
 		ProductIndex,
 		ProductCategory,
-		ProductOnly
+		ProductOnly,
+		CartShop
 	}
 })
 

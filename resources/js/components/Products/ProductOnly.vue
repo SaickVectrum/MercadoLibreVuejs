@@ -17,9 +17,8 @@
 						<p>{{ product.description }}</p>
 						<p class="card-text">Precio: ${{product.price }}</p>
 						<p>Stock: {{ product.stock }} Unidad(es)</p>
-						<form method="post">
-
-							<input type="hidden" name="id">
+						<form @submit.prevent="addToCart">
+							<input type="hidden" name="id" :value="product.id">
 							<input type="submit" name="btn" class="btn btn-primary w-50" value="Añadir al carrito">
 						</form>
 					</div>
@@ -33,8 +32,13 @@
 	export default {
 		props: ['product'],
 
-		created() {
-			console.log(this.product) // Imprime los datos de los productos en la consola del navegador
+		methods: {
+			async addToCart() {
+				const productId = this.product.id
+				console.log(productId)
+				const response = await axios.post(`/cart/add/${productId}`)
+				console.log(response)
+			}
 		}
 	}
 </script>

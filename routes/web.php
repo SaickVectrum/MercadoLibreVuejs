@@ -57,10 +57,10 @@ Route::group(['middleware' => ['auth']], function () {
 
 	//Cart shop
 	Route::group(['prefix' => 'cart', 'controller' => CartController::class], function () {
-		Route::post('cart/add', 'add')->name('add');
-		Route::get('cart/checkout', 'checkout')->name('checkout');
-		Route::get('cart/clear', 'clear')->name('clear');
-		Route::post('cart/removeitem', 'removeItem')->name('removeitem');
+		Route::get('/', 'index')->name('cart');
+		Route::post('/add/{productId}', 'add')->name('add');
+		// Route::get('cart/clear', 'clear')->name('clear');
+		// Route::post('cart/removeitem', 'removeItem')->name('removeitem');
 	});
 });
 Route::get('/products/{nameCategory}', [ProductController::class, 'productosPorCategoria'])->name('products.productosPorCategoria');

@@ -68,4 +68,7 @@ class User extends Authenticatable
 		$this->attributes['remember_token'] = Str::random(30);
 	}
 
+	public function cart(){
+		return $this->hasMany(Cart::class, 'user_id', 'id');
+	}
 }

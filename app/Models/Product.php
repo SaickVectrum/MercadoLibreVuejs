@@ -47,4 +47,9 @@ class Product extends Model
 	{
 		return $this->morphOne(File::class, 'fileable');
 	}
+
+	public function carts()
+	{
+		return $this->belongsToMany(Cart::class, 'product_id', 'id');
+	}
 }
