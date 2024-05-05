@@ -22,13 +22,6 @@ class ProductController extends Controller
 		return view('index', compact('products'));
 	}
 
-	public function search(Request $request)
-	{
-		$buscarpor = $request->get('buscarpor');
-		$products = Product::with('category', 'file')->whereHas('category')->where('title', 'like', '%' . $buscarpor . '%')->where('stock', '>', 0)->get();
-		return redirect('/')->with('buscarpor', $buscarpor, 'products', $products);
-	}
-
 	public function index()
 	{
 
@@ -48,7 +41,7 @@ class ProductController extends Controller
 	{
 		$category = Category::where('name', $nameCategory)->firstOrFail();
 		$products = Product::with('file')->where('category_id', $category->id)->get();
-		return view('products.nuevaVista', compact('category', 'products'));
+		return view('products.category', compact('category', 'products'));
 	}
 
 	public function store(ProductRequest $request)

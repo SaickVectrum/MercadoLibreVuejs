@@ -14,7 +14,6 @@ class UserController extends Controller
 		$users = User::with('roles')->get();
 		if (!$request->ajax()) return view('users.index', compact('users'));
 		return response()->json(['users' => $users], 200);
-		// view
 	}
 
 
@@ -74,4 +73,4 @@ class UserController extends Controller
 		if (!$request->ajax()) return back()->with('success', 'User delete');
 		return response()->json([], 204);
 	}
-} 
+}

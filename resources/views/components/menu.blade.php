@@ -10,7 +10,7 @@
         {{-- Haburguesa --}}
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-            <span class="navbar-toggler-icon">hola</span>
+            <span class="navbar-toggler-icon"></span>
         </button>
         <form class="d-flex  " action="{{ url('/') }}">
             <input name="buscarpor" class="form-control me-2 w-100" type="search" placeholder="Buscar producto"

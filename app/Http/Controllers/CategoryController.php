@@ -12,13 +12,14 @@ class CategoryController extends Controller
 {
 	public function index(Request $request)
 	{
+		//Este es para el CRUD de categorias
 		$categories = Category::get();
 		return view('categories.index', compact('categories'));
-
-		// view
 	}
 
-	public function getCategory(Request $request){
+	public function getCategory(Request $request)
+	{
+		//Este para enviarle las categorias al CRUD de productos.
 		$categories = Category::get();
 		if (!$request->ajax()) return view('categories.index');
 		return response()->json(['categories' => $categories], 200);

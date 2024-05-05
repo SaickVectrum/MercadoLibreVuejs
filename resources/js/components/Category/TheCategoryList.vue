@@ -44,7 +44,6 @@
 	import { deleteMessage, successMessage } from '@/helpers/Alert.js'
 
 	export default {
-		//Se registra el componente para que ya se pueda usar
 		components: {
 			CategoryModal
 		},

@@ -3,7 +3,6 @@
         <div class="d-flex justify-content-center my-4">
             <h1>Listado de usuarios</h1>
         </div>
-
         <div class="card">
             <div class="card-header d-flex justify-content-end">
                 <a href="{{ route('users.create') }}" class="btn btn-primary">Crear usuario</a>

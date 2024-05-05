@@ -55,7 +55,7 @@
 		},
 		props: ['products'],
 		computed: {
-        // Método computado para formatear el precio del producto como moneda
+        //formatea los numeros a tipo moneda
         formatCurrency() {
             return (value) => {
                 if (typeof value !== "number") {

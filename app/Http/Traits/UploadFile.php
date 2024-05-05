@@ -39,7 +39,6 @@ trait UploadFile
 	private function getRoute($model)
 	{
 		$routes = [
-			Book::class => 'images/books',
 			User::class => 'images/users'
 		];
 		return $routes[get_class($model)] ?? 'images';

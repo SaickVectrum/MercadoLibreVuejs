@@ -17,7 +17,6 @@ class SearchProduct
 	 */
 	public function handle(Request $request, Closure $next)
 	{
-
 		$buscarpor = $request->get('buscarpor');
 		$searchproducts = Product::with('category', 'file')
 			->whereHas('category')
@@ -25,7 +24,6 @@ class SearchProduct
 			->where('stock', '>', 0)
 			->get();
 
-		// Puedes adjuntar los productos y la cadena de búsqueda a la solicitud
 		$request->merge(['searchProducts' => $searchproducts, 'buscarpor' => $buscarpor]);
 		view()->share('buscarpor', $buscarpor);
 

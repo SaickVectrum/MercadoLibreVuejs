@@ -22,8 +22,6 @@ class UserRequest extends FormRequest
 		'password' => ['confirmed', 'string', 'min:8', 'required'],
 	];
 
-	
-
 	public function rules()
 	{
 		if ($this->method() == 'PUT') {

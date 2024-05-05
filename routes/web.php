@@ -59,8 +59,9 @@ Route::group(['middleware' => ['auth']], function () {
 	Route::group(['prefix' => 'cart', 'controller' => CartController::class], function () {
 		Route::get('/', 'index')->name('cart');
 		Route::post('/add/{productId}', 'add')->name('add');
-		// Route::get('cart/clear', 'clear')->name('clear');
-		// Route::post('cart/removeitem', 'removeItem')->name('removeitem');
+		Route::delete('/delete/{productId}', 'delete')->name('delete');
+		Route::delete('/clear', 'clear')->name('clear');
 	});
 });
+//Productos por categoria
 Route::get('/products/{nameCategory}', [ProductController::class, 'productosPorCategoria'])->name('products.productosPorCategoria');
